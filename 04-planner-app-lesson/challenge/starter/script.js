@@ -12,31 +12,35 @@ var timeFormat = startOfBusiness.format('hh A');
 
 var container = $('.container')
 
-while (startOfBusiness.hour() < 18) {
-    // console.log(startOfBusiness.format('hh A'));
+while (startOfBusiness.hour() < 19) {
+    
       var timeBlock = document.createElement('div');
       $('div').addClass('time');
-      $('div .time').text(timeFormat);
-      container.append(timeBlock);                        
-      var textArea = document.createElement('textarea')
+      $('div .time').text(timeFormat);                  
+      container.append(startOfBusiness.format('HHA'));          
+      var textAreaNi = document.createElement('textarea');
       $('textarea').text('Task description');
-      container.append(textArea);
+      container.append(textAreaNi);
       var button = document.createElement('button')
       $('button').addClass('save');
       $('button').text('Save');
       container.append(button);
-      var nextHour = startOfBusiness.add(1, 'hours'); // returning 18pm instead of 10am
+      
+      startOfBusiness.add(1, 'hours');
+      
       
 };
 
+// the button has not been added yet so it fails?
 
+button.addEventListener("click", () => {
+      var inputs = JSON.parse(localStorage.getItem("inputs")) || [];
+      inputs.push(textAreaNi.value); 
+      localStorage.setItem('inputs', JSON.stringify(textAreaNi));  
 
-
-// create eventlistener for "Save" button
-
-var saveButton = $('.save');
-saveButton.click(function(){
-    // local storage 
-    // feedback
+      // add feedback
   });
 
+
+  
+     
