@@ -85,3 +85,14 @@ textarea {
 .container div:nth-child(odd) {
   background: #06aed5;
 }
+
+.hide {
+  display: none;
+}
+
+#msg {
+  padding: 20px;
+  text-align: center;
+
+}
+

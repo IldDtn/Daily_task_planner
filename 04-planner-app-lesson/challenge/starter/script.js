@@ -25,22 +25,32 @@ while (startOfBusiness.hour() < 19) {
       $('button').addClass('save');
       $('button').text('Save');
       container.append(button);
+      button.addEventListener("click", alertmsg);
       
       startOfBusiness.add(1, 'hours');
       
       
 };
 
-// the button has not been added yet so it fails?
-
-button.addEventListener("click", () => {
-      var inputs = JSON.parse(localStorage.getItem("inputs")) || [];
-      inputs.push(textAreaNi.value); 
-      localStorage.setItem('inputs', JSON.stringify(textAreaNi));  
-
-      // add feedback
-  });
+// the button has not been added yet so it fails, needs to be inside loop
 
 
-  
-     
+function alertmsg () {
+
+      
+      const msg = $('#msg');
+      $('#msg').removeClass("hide");
+      setTimeout(function () {
+            msg.textContent = 'Item has been added to localStorage';
+            $('#msg').addClass("hide");
+        }, 2000);
+
+};
+
+//       var inputs = JSON.parse(localStorage.getItem("inputs")) || [];
+//       inputs.push(textAreaNi.value); 
+//       localStorage.setItem('inputs', JSON.stringify(textAreaNi));  
+
+//       // add feedback
+//   });
+
