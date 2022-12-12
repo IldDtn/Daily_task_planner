@@ -7,33 +7,45 @@ $("#currentDay").text(today.format("D MMM YYYY"));
 var currentTime = moment().format('hh a');
 console.log(currentTime);
 
+// create variables to show dates on planner:
 var startOfBusiness = moment(09, 'hh');
 var timeFormat = startOfBusiness.format('hh A');
-
 var container = $('.container')
 
 while (startOfBusiness.hour() < 19) {
-    
+      
+      // create div that holds time, addclass, add time to div and append them to parent container
       var timeBlock = document.createElement('div');
       $('div').addClass('time');
-      $('div .time').text(timeFormat);                  
-      container.append(startOfBusiness.format('HHA'));          
+      $('div .time').text(timeFormat);    
+      container.append(startOfBusiness.format('HHA'));        
+      
+      // create text area, add task description, and append them to parent container
       var textAreaNi = document.createElement('textarea');
       $('textarea').text('Task description');
       container.append(textAreaNi);
+
+       // create save button, add class, add "Save" as textcontent and append it to parent container
       var button = document.createElement('button')
       $('button').addClass('save');
-      $('button').text('Save');
+      $('button').addClass("fa-solid fa-floppy-disk");
       container.append(button);
+
+      // add eventlistener, when button is clicked alert message appears informing items have been added to local storage 
       button.addEventListener("click", alertmsg);
+
+      // add eventlistener, when button is clicked items should be added to local storage 
+      button.addEventListener("click", localSt);
       
+      // increment hour by one
       startOfBusiness.add(1, 'hours');
       
       
 };
 
-// the button has not been added yet so it fails, needs to be inside loop
 
+
+// function to create pop-up alert message
 
 function alertmsg () {
 
@@ -47,10 +59,35 @@ function alertmsg () {
 
 };
 
-//       var inputs = JSON.parse(localStorage.getItem("inputs")) || [];
-//       inputs.push(textAreaNi.value); 
-//       localStorage.setItem('inputs', JSON.stringify(textAreaNi));  
+// approach 1 , save items as array of items 
 
-//       // add feedback
-//   });
+
+function localSt() {
+      var taskList = [];
+      if (taskList.length === 0) {
+            (localStorage.getItem('tasklist'));
+      } else {
+            JSON.parse(localStorage.getItem('tasklist'));
+      }                                                                         // first need to get existing loc storage if empty do not parse?
+      taskList.push(textAreaNi.value);                                           // add new item
+      JSON.stringify(localStorage.setItem('tasklist', taskList));               // return updated storage
+
+
+};
+
+// approach 2 save tasks as a list of objects.
+
+// var tasks = [
+// {
+//       task: 'take out trash '
+// },
+
+// {
+// task: 'washing up'
+// }];
+
+  // colour code
+  // font awesome
+  // hide last row 
+  // change task description to placeholder 
 
