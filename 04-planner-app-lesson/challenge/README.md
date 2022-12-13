@@ -20,6 +20,13 @@ I have used the [Moment.js](https://momentjs.com/) library to work with date and
 
 * Persist events between refreshes of a page
 
+## Screenshot 
+
+![image](https://user-images.githubusercontent.com/115641798/207360316-b30b8bbe-e70b-43f3-b264-81cd285e6805.png)
+
+## Live URL
+
+https://ilddtn.github.io/Daily_task_planner/
 
 
 
