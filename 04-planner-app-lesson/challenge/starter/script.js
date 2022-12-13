@@ -47,7 +47,7 @@ while (startOfBusiness.hour() < 19) {
       button.addEventListener("click", alertmsg);
 
       // add eventlistener, when button is clicked items should be added to local storage 
-      button.addEventListener("click", localSt);
+      // button.addEventListener("click", localSt);
       
       // increment hour by one
       startOfBusiness.add(1, 'hours');
@@ -72,18 +72,18 @@ function alertmsg () {
 // approach 1 , save items as array of items 
 
 
-function localSt() {
-      var taskList = [];
-      if (taskList.length === 0) {
-            (localStorage.getItem('tasklist'));
-      } else {
-            JSON.parse(localStorage.getItem('tasklist'));
-      }                                                                         // first need to get existing loc storage if empty do not parse?
-      taskList.push(textAreaNi.value);                                           // add new item
-      JSON.stringify(localStorage.setItem('tasklist', taskList));               // return updated storage
+// function localSt() {
+//       var taskList = [];
+//       if (taskList.length === 0) {
+//             (localStorage.getItem('tasklist'));
+//       } else {
+//             JSON.parse(localStorage.getItem('tasklist'));
+//       }                                                                         // first need to get existing loc storage if empty do not parse?
+//       taskList.push(textAreaNi.value);                                           // add new item
+//       JSON.stringify(localStorage.setItem('tasklist', taskList));               // return updated storage
 
 
-};
+// };
 
 // approach 2 save tasks as a list of objects.
 
