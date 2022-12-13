@@ -99,5 +99,6 @@ textarea {
 .highlight {
   color: red;
   font-weight: bold;
+  font-style: oblique;
 }
 
