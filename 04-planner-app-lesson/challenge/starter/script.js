@@ -5,7 +5,8 @@ $("#currentDay").text(today.format("D MMM YYYY"));
 
 // need to get currentTime to decide css class:
 var currentTime = moment().format('hh a');
-console.log(currentTime);
+var currentTime2 = moment().format('hh');
+
 
 // create variables to show dates on planner:
 var startOfBusiness = moment(09, 'hh');
@@ -18,19 +19,20 @@ while (startOfBusiness.hour() < 19) {
       var timeBlock = document.createElement('div');
       $('div').addClass('time');
       $('div .time').text(timeFormat);    
-      container.append(startOfBusiness.format('HHA'));        
+      container.append(startOfBusiness.format('HHA')); 
+      console.log(startOfBusiness.format('HHA'));       
       
       // create text area, add task description, and append them to parent container
       var textAreaNi = document.createElement('textarea');
       $('textarea').attr('placeholder', 'Task Description');
       container.append(textAreaNi);
 
-      // add color code, past = grey, current = red, future = green, 
-      if (currentTime === timeFormat) {
+      // add color code, past = grey, current = pink, future = green, 
+      if (currentTime2 === startOfBusiness.format('HH')) {
             $('textarea').addClass('current');
-      } else if (currentTime > timeFormat) {
+      } else if (currentTime2 > startOfBusiness.format('HH')) {
             $('textarea').addClass('past');
-      } else {
+      } else if ((currentTime2 < startOfBusiness.format('HH'))){
             $('textarea').addClass('past');
       };
 
@@ -51,8 +53,6 @@ while (startOfBusiness.hour() < 19) {
       
       
 };
-
-
 
 // function to create pop-up alert message
 
@@ -95,19 +95,17 @@ function localSt() {
 // task: 'washing up'
 // }];
 
-// colour code rows, 
-// will have to be included in the loop line 25 
-
-// dont think output is right format, need to remove am, pm 
-console.log(currentTime);
-console.log(timeFormat);
 
 
 
 
 
 
-// additional tasks 
+
+
+
+
+
 
 
 
