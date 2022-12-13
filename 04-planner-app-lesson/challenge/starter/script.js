@@ -22,8 +22,17 @@ while (startOfBusiness.hour() < 19) {
       
       // create text area, add task description, and append them to parent container
       var textAreaNi = document.createElement('textarea');
-      $('textarea').text('Task description');
+      $('textarea').attr('placeholder', 'Task Description');
       container.append(textAreaNi);
+
+      // add color code, past = grey, current = red, future = green, 
+      if (currentTime === timeFormat) {
+            $('textarea').addClass('current');
+      } else if (currentTime > timeFormat) {
+            $('textarea').addClass('past');
+      } else {
+            $('textarea').addClass('past');
+      };
 
        // create save button, add class, add "Save" as textcontent and append it to parent container
       var button = document.createElement('button')
@@ -86,13 +95,19 @@ function localSt() {
 // task: 'washing up'
 // }];
 
-//   // colour code
-//    if (currentTime === timeFormat) {
-//       change color 
-//    }
+// colour code rows, 
+// will have to be included in the loop line 25 
+
+// dont think output is right format, need to remove am, pm 
+console.log(currentTime);
+console.log(timeFormat);
 
 
-  // hide last row 
-  
-  // change task description to placeholder 
+
+
+
+
+// additional tasks 
+
+
 
