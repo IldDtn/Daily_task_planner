@@ -5,7 +5,9 @@ $("#currentDay").text(today.format("D MMM YYYY"));
 
 // need to get currentTime to decide css class:
 var currentTime = moment().format('hh a');
-var currentTime2 = moment().format('hh');
+var currentTime2 = moment().format('kk');
+console.log(currentTime2);
+// console.log(startOfBusiness.format('HH'));
 
 
 // create variables to show dates on planner:
@@ -20,7 +22,7 @@ while (startOfBusiness.hour() < 19) {
       $('div').addClass('time');
       $('div .time').text(timeFormat);    
       container.append(startOfBusiness.format('HHA')); 
-      console.log(startOfBusiness.format('HHA'));       
+           
       
       // create text area, add task description, and append them to parent container
       var textAreaNi = document.createElement('textarea');
@@ -28,7 +30,7 @@ while (startOfBusiness.hour() < 19) {
       $('textarea').addClass('text');
       container.append(textAreaNi);
 
-      // add color code, past = grey, current = pink, future = green, 
+      // add color code, past = grey, current = pink, future = green, it only works in the morning :D, after 12 ot changes to 01 not 13. 
       if (currentTime2 === startOfBusiness.format('HH')) {
             $('textarea').addClass('current');
       } else if (currentTime2 < startOfBusiness.format('HH')) {
@@ -47,7 +49,7 @@ while (startOfBusiness.hour() < 19) {
       button.addEventListener("click", alertmsg);
 
       // add eventlistener, when button is clicked items should be added to local storage 
-      button.addEventListener("click", localSt);
+      // button.addEventListener("click", localSt);
       
       // increment hour by one
       startOfBusiness.add(1, 'hours');
@@ -72,18 +74,18 @@ function alertmsg () {
 // approach 1 , save items as array of items 
 
 
-function localSt() {
-      var taskList = [];
-      if (taskList.length === 0) {
-            (localStorage.getItem('tasklist'));
-      } else {
-            JSON.parse(localStorage.getItem('tasklist'));
-      }                                                                         // first need to get existing loc storage if empty do not parse?
-      taskList.push(textAreaNi.value);                                           // add new item
-      JSON.stringify(localStorage.setItem('tasklist', taskList));               // return updated storage
+// function localSt() {
+//       var taskList = [];
+//       if (taskList.length === 0) {
+//             (localStorage.getItem('tasklist'));
+//       } else {
+//             JSON.parse(localStorage.getItem('tasklist'));
+//       }                                                                         // first need to get existing loc storage if empty do not parse?
+//       taskList.push(textAreaNi.value);                                           // add new item
+//       JSON.stringify(localStorage.setItem('tasklist', taskList));               // return updated storage
 
 
-};
+// };
 
 // approach 2 save tasks as a list of objects.
 
