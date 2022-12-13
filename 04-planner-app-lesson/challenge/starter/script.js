@@ -86,8 +86,13 @@ function localSt() {
 // task: 'washing up'
 // }];
 
-  // colour code
-  // font awesome
+//   // colour code
+//    if (currentTime === timeFormat) {
+//       change color 
+//    }
+
+
   // hide last row 
+  
   // change task description to placeholder 
 
