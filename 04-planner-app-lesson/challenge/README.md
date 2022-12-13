@@ -1,6 +1,6 @@
-# Third-Party APIs: Work Day Scheduler
+# Work Day Scheduler
 
-##  Task
+##  Description
 
 I have created a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
 
@@ -28,6 +28,10 @@ I have used the [Moment.js](https://momentjs.com/) library to work with date and
 
 https://ilddtn.github.io/Daily_task_planner/
 
+## Installation
+n/a
 
+## Credits
+n/a
 
 
