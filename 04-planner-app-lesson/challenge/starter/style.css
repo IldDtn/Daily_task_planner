@@ -98,21 +98,20 @@ textarea {
   font-style: oblique;
 }
 
-.past {
-  background-color: lightgrey;
+.future {
+  background-color:  rgb(173, 237, 173);
 }
 
 .current {
   background-color: rgb(248, 128, 158);
 }
 
-.future {
-  background-color: green;
+.past {
+  background-color: lightgrey;
 }
 
 .time {
   background-color: white;
-  
 }
 
 .save {
@@ -120,3 +119,4 @@ textarea {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
+

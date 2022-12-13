@@ -25,14 +25,15 @@ while (startOfBusiness.hour() < 19) {
       // create text area, add task description, and append them to parent container
       var textAreaNi = document.createElement('textarea');
       $('textarea').attr('placeholder', 'Task Description');
+      $('textarea').addClass('text');
       container.append(textAreaNi);
 
       // add color code, past = grey, current = pink, future = green, 
       if (currentTime2 === startOfBusiness.format('HH')) {
             $('textarea').addClass('current');
-      } else if (currentTime2 > startOfBusiness.format('HH')) {
-            $('textarea').addClass('past');
-      } else if ((currentTime2 < startOfBusiness.format('HH'))){
+      } else if (currentTime2 < startOfBusiness.format('HH')) {
+            $('textarea').addClass('future');
+      } else if ((currentTime2 > startOfBusiness.format('HH'))){
             $('textarea').addClass('past');
       };
 
